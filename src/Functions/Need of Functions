@@ -1,0 +1,25 @@
+Q1. Why we need functions in Java?
+Ans: Due to following reasons:
+     1. Code Reusability
+        Instead of writing the same code again and again, you can write it once inside a function
+        and reuse it wherever needed.
+
+     2. Modular Code (Organized and Clean)
+        Functions help break a big task into small, manageable parts (modules), which makes
+        code easier to read and maintain.
+
+     3. Easy Debugging & Maintenance
+        If there's a bug, you can easily check inside the specific function instead of searching
+         through the whole program.
+
+     4. Avoid Redundancy (DRY Principle)
+        DRY = Don't Repeat Yourself.
+        Functions help avoid repeating code, which saves time and reduces errors.
+
+     5. Improves Testing
+        Functions can be tested independently. You can write unit tests for a specific function
+        without needing to test the entire program.
+
+     6. Supports OOP Concepts
+        In Java, which is object-oriented, methods/functions are used inside classes to define
+        object behaviors.

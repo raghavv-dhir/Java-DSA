@@ -1,0 +1,60 @@
+🔍 What is Scope?
+Scope defines where a variable is accessible — i.e., which part of the program can see it and use it.
+
+✅ Types of Scopes in Java:
+1. Local Scope
+Variables declared inside a method or block.
+Only accessible within that method or block.
+Ex:
+void show() {
+    int x = 10; // x is local to this method
+    System.out.println(x);
+}
+Trying to access x outside show() will cause a compile-time error.
+
+2. Method Parameter Scope
+Parameters passed to a method are also local to that method.
+Ex:
+void greet(String name) {
+    System.out.println(name);  // name exists only in this method
+}
+
+3. Block Scope (if/while/for)
+Variables declared inside curly braces {} are accessible only inside that block.
+Ex:
+if (true) {
+    int a = 5;
+    System.out.println(a); // okay
+}
+System.out.println(a); // ❌ error: a cannot be resolved
+
+4. Instance/Object Scope
+Variables declared outside methods but inside a class.
+They belong to the object (if non-static) or the class (if static).
+Ex:
+class Person {
+    String name; // instance variable
+
+    void setName(String n) {
+        name = n; // accessible here
+    }
+}
+
+⚠️ Common Scope Mistakes
+1. Accessing local variables outside their scope:
+    void test() {
+        int x = 5;
+    }
+    System.out.println(x);  // ❌ Error: x is out of scope
+
+2. Shadowing variables with the same name:
+    int value = 10;
+    void method() {
+        int value = 20; // shadows the outer 'value'
+        System.out.println(value); // prints 20
+    }
+
+🔚 Final Takeaway:
+Scope controls visibility.
+If something is declared in a function, you can only use it inside that function. If it’s a parameter, it behaves like a temporary local variable.
+Even if names match, scope decides which one is actually being referred to.
