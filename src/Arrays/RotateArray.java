@@ -7,6 +7,8 @@ public class RotateArray {
         //Leetcode 189
         int[] nums = {1,2,3,4,5,6,7};
         int k = 3;
+        solution(nums,k);
+        System.out.println(Arrays.toString(nums));
     }
     static void solution(int[] nums, int k){
         //edge cases

@@ -7,7 +7,7 @@ import java.util.Set;
 public class ContainsDuplicate {
     public static void main(String[] args) {
         //Leetcode 217
-        int[] nums = {1,2,3,4};
+        int[] nums = {1,2,3,3};
         System.out.println(solution(nums));
         System.out.println(solution2(nums));
     }
