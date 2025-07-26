@@ -19,7 +19,7 @@ public class IntersectionOfTwoArrays {
 
         for(int num: nums2)  s2.add(num); //s2-> [9,4,8]
 
-        s1.retainAll(s2); // modifies set1 to only keep common elements
+        s1.retainAll(s2); // modifies set1 to only keep common elements // s1= {4,9}
 
         int[] ans = new int[s1.size()];
         int i = 0;
