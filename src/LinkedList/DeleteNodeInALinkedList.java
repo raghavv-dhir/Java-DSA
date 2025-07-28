@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class DeleteNodeInALinkedList {
-    static class ListNode{
+    private static class ListNode{
         int val;
         ListNode next;
 

@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class ReturnNthNodeFromEnd {
-    static class ListNode{
+    private static class ListNode{
         int val;
         ListNode next;
         ListNode(int val){
