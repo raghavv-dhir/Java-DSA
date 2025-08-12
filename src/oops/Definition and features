@@ -1,0 +1,64 @@
+What is OOP in Java?
+OOP (Object-Oriented Programming) in Java is a programming paradigm that organizes code into objects — real-world entities that have:
+
+State → stored in fields (variables)
+
+Behavior → defined by methods (functions)
+
+Identity → each object is unique in memory
+
+Java is fully object-oriented (except primitive types, which have wrappers) and everything revolves around classes (blueprints) and objects (instances).
+
+Class (Blueprint)
+Definition: A template or blueprint from which objects are created.
+
+What it contains: Variables (fields) + Methods (functions).
+
+Analogy: Class = "Design of a car" (blueprint) — it describes what the car should have (engine, seats) and what it can do (start, drive).
+
+Object (Instance)
+Definition: A real entity created from a class blueprint, having its own state and behavior.
+
+What it is: The actual thing you can use in your program.
+
+Analogy: Object = "My red Honda Civic" — a specific car built from the blueprint.
+
+Core Features of OOP in Java
+1. Encapsulation
+Meaning: Wrapping data (variables) and code (methods) into a single unit (class).
+
+Why: To protect data from direct access and allow control through getters/setters.
+
+
+2. Inheritance
+Meaning: One class inherits the properties and behaviors of another class.
+
+Why: Promotes code reuse and method overriding.
+
+
+3. Polymorphism
+Meaning: Same method name, different behavior.
+
+Types:
+
+Compile-time (Overloading) → Same method name, different parameters.
+
+Runtime (Overriding) → Child class changes parent’s method behavior.
+
+
+4. Abstraction
+Meaning: Hiding complex details and showing only essential info.
+
+How:
+
+Abstract classes → Can have both abstract and concrete methods.
+
+Interfaces → Only abstract methods (until Java 8 allowed defaults).
+
+
+Other OOP Principles in Java
+Association → Relationship between classes (has-a).
+
+Composition → Strong "has-a" relationship (object lifecycle tied).
+
+Aggregation → Weak "has-a" relationship (independent lifecycle).
