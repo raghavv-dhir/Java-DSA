@@ -25,3 +25,13 @@ class Child2 extends Parent2 {
         System.out.println("This is the Child class");
     }
 }
+
+/*
+Multilevel Inheritance
+Definition:
+A type of inheritance where a class inherits from another class, and then another class inherits from that derived class.
+(Grandparent → Parent → Child chain)
+
+Purpose:
+To build classes in layers, reusing features from multiple ancestor levels.
+ */

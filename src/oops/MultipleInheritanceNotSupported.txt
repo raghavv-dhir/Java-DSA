@@ -1,0 +1,8 @@
+Multiple Inheritance
+Definition:
+A type of inheritance where a class inherits from more than one parent class.
+
+Status in Java:
+Java does NOT support multiple inheritance with classes — to avoid the Diamond Problem (ambiguity when two parents have the same method).
+Instead, Java supports multiple inheritance through interfaces.
+
