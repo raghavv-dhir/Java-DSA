@@ -15,13 +15,13 @@ public class ValidPalindrome {
             char c1 = s.charAt(i);
             char c2 = s.charAt(j);
 
-            // Skip non-alphanumeric characters from left
+            // Skip all the non-alphanumeric characters from left
             if (!isAlphanumeric(c1)) {
                 i++;
                 continue;
             }
 
-            // Skip non-alphanumeric characters from right
+            // Skip all the non-alphanumeric characters from right
             if (!isAlphanumeric(c2)) {
                 j--;
                 continue;
