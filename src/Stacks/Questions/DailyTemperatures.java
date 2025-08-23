@@ -10,7 +10,7 @@ public class DailyTemperatures {
         System.out.println(Arrays.toString(res));
     }
     static int[] dailyTemp(int[] temperatures){
-        int n = temperatures.length;
+        int n = temperatures.length; //no need to make custom tack as we are only storing index values and not temperature values
         int[] res = new int[n];
         Stack<Integer> st = new Stack<>();
         st.push(0);
