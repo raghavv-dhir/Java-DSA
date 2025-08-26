@@ -1,0 +1,55 @@
+🔹 What is Binary Search?
+
+Binary Search is a searching algorithm used in sorted arrays (ascending or descending order).
+It works by repeatedly dividing the search interval in half instead of checking each element one by one (like linear search).
+
+👉 This makes it much faster than Linear Search.
+
+🔹 How Binary Search Works (Steps)
+
+Suppose we have a sorted array:
+[10, 20, 30, 40, 50, 60, 70]
+
+We want to search for 40.
+
+Find the middle element
+
+Start = 0 (index of first element)
+
+End = 6 (index of last element)
+
+Mid = (start + end) / 2 = (0 + 6) / 2 = 3
+
+Element at index 3 = 40 ✅ Found!
+
+If the middle element is not the target:
+
+If target < midElement → search in the left half
+
+If target > midElement → search in the right half
+
+🔹 Example Flow
+
+Array = [10, 20, 30, 40, 50, 60, 70]
+Target = 60
+
+Step 1: start=0, end=6 → mid=3 → arr[3]=40 → 60 > 40 → search right half
+
+Step 2: start=4, end=6 → mid=5 → arr[5]=60 → ✅ Found at index 5
+
+🔹 Time Complexity
+
+Best case: O(1) (element is exactly at the middle)
+
+Worst case: O(log n) (each step halves the search space)
+
+Space complexity: O(1) (iterative) / O(log n) (recursive stack)
+
+
+🔹 Key Points to Remember
+
+Works only on sorted arrays.
+
+Efficient for large arrays compared to linear search.
+
+Can be implemented iteratively (better for space) or recursively (cleaner code).
