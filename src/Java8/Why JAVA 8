@@ -1,0 +1,42 @@
+✅ Why Java 8? (Interview Answer Style)
+
+1. Paradigm Shift → Functional Programming in Java
+
+Before Java 8 → Purely OOP, verbose code.
+
+With Java 8 → Introduced lambda expressions, streams, functional interfaces → less boilerplate, more expressive code.
+
+2. Cleaner & Concise Code
+
+Writing anonymous classes was ugly (new Runnable() { public void run() { … } }).
+
+Java 8 → () -> { … } with lambdas = 10x cleaner.
+
+3. Parallel + Declarative Data Processing (Streams)
+
+Earlier → Loops everywhere (for, while).
+
+Now → list.stream().filter(x -> x > 10).map(x -> x*2).collect(...).
+
+Easy parallelization → parallelStream() uses multicore CPUs automatically.
+
+4. Safe Code (Optional)
+
+One of the biggest pain points = NullPointerException.
+
+Java 8 introduced Optional to handle nulls gracefully.
+
+5. Modern Date & Time API
+
+Old java.util.Date and Calendar = broken design, not thread-safe.
+
+Java 8 gave us LocalDate, LocalTime, LocalDateTime → immutable, thread-safe, and human-readable.
+
+6. Backward Compatibility + Performance
+
+You can still run old Java code.
+
+But you also get new APIs that make programs faster & cleaner.
+
+👉 Sample Interview Answer (polished):
+"Java 8 was a turning point because it brought functional programming into Java. It introduced lambdas and the Streams API, which made code much more concise, readable, and easy to parallelize. It also solved long-standing problems like handling nulls with Optional and improved the Date/Time API. Overall, Java 8 made Java more modern, expressive, and competitive compared to other languages like Python and Scala."
