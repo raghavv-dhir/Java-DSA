@@ -21,6 +21,7 @@ public class LambdaExpressions {
 -> Remove method name
 -> Place arrow
 
+
 #Examples:
 1. () -> System.out.print("Hello");  //No need of {} in case of single statement
 2. (a, b) -> System.out.print(a+b); No need to write return type
