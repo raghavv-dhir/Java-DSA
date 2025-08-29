@@ -1,0 +1,35 @@
+💡 Definition:
+
+A Functional Interface in Java is an interface that has exactly one abstract method (SAM: Single Abstract Method).
+
+It may have multiple default or static methods, but only one abstract method.
+
+It’s the base for Lambda Expressions and Method References.
+
+✅ Example:
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void sayHello(); // only one abstract method
+}
+
+
+This can be used with a lambda:
+
+public class Test {
+    public static void main(String[] args) {
+        MyFunctionalInterface obj = () -> System.out.println("Hello, World!");
+        obj.sayHello();
+    }
+}
+
+🔑 Points to Remember:
+
+Marking with @FunctionalInterface is optional but recommended (compiler checks).
+
+Popular built-in functional interfaces:
+
+Runnable (from old Java)
+
+Callable
+
+Java 8’s java.util.function package: Predicate, Function, Consumer, Supplier

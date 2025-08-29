@@ -11,9 +11,9 @@ public class interfaces {
 }
 
 interface Client{
-    void input(); //By default, public and abstract
-    // All methods in an interface are abstract by default, so no need to use the '
-    void output();
+    abstract void input(); //By default, public and abstract
+    // All methods in an interface are abstract by default, so no need to use the 'abstract' keyword
+    abstract void output();
 }
 class Raj implements Client{
     String username;

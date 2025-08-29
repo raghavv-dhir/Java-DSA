@@ -1,0 +1,7 @@
+🌊 What is the Stream API?
+
+Introduced in Java 8.
+
+A stream is a sequence of elements (like data from a collection/array) that you can process in a functional style.
+
+Think of it as a conveyor belt: data flows through a pipeline of operations.
