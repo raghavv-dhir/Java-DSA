@@ -61,6 +61,7 @@ public class Stream {
         reduce(0, ...) → starts from 0 and keeps adding.
         (a, b) -> a + b → lambda for addition.
          */
+
         System.out.println(sum2);
 
         //Q. Print max even number from list
