@@ -1,0 +1,830 @@
+Q1. What is java and why is it not considered a pure object-oriented programming language?
+Ans:  What is Java?
+     -> Java is a high-level, class-based, object-oriented programming language.
+
+     -> It is platform-independent thanks to the JVM (Write Once, Run Anywhere).
+
+     -> Known for robustness, security, and a huge ecosystem.
+
+     -> Widely used in enterprise applications, fintech, cloud, and Android development.
+
+     Why is Java not considered a pure object-oriented language?
+
+     Java is object-oriented but not 100% pure OOP because:
+
+     Primitive Data Types:
+
+     -> Java has 8 primitives (int, char, boolean, etc.) which are not objects.
+
+     -> A pure OOP language (like Smalltalk) would treat everything as an object.
+
+     -> (Though Java provides wrapper classes like Integer, Character, etc. via autoboxing, primitives still exist).
+
+     Static Methods and Variables:
+
+     -> You can call methods/variables directly on a class without creating an object (e.g., Math.max()).
+
+     -> This breaks the “everything must be an object” principle.
+
+     Operator Overloading:
+
+     -> Java doesn’t allow custom operator overloading (except + for strings).
+
+     -> Pure OOP languages often allow treating operators as objects.
+
+     Mix of Procedural Features:
+
+     -> You can write procedural code (like static main method) alongside OOP concepts.
+
+     -> This hybrid nature means Java is not 100% OOP.
+
+Q2. Key components to run a java program?
+Ans: JDK (Java Development Kit)
+
+     -> It’s the full toolkit for developers.
+
+     -> Includes:
+
+        -> JRE (Java Runtime Environment) → to run Java programs.
+
+        -> Compiler (javac) → converts .java source code → .class bytecode.
+
+        -> Development tools (debugger, documentation tool, etc.).
+
+     -> Needed when you’re writing + compiling Java code.
+
+     JRE (Java Runtime Environment)
+
+     -> Provides the libraries + JVM needed to actually run Java programs.
+
+     -> Contains class libraries, JVM, and other runtime files.
+
+     -> Needed when you only want to run (not develop) Java programs.
+
+     JVM (Java Virtual Machine)
+
+     -> The engine that executes the compiled Java bytecode.
+
+     -> It converts platform-independent bytecode into machine-specific instructions.
+
+     -> Provides important features:
+
+        -> Garbage Collection
+
+        -> Memory Management
+
+        -> Security (sandboxing)
+
+     ⚡ Flow of Running a Java Program
+
+     1. Write code → MyProgram.java.
+
+     2. Compile → javac MyProgram.java → produces MyProgram.class (bytecode).
+
+     3. Run → java MyProgram → JVM executes the bytecode with help of JRE.
+
+Q3. Main features of java?
+Ans: Object-Oriented
+
+     -> Everything revolves around objects & classes.
+
+     -> Supports OOP principles → inheritance, polymorphism, abstraction, encapsulation.
+
+     Platform Independent (WORA)
+
+     -> Write Once, Run Anywhere → thanks to JVM + bytecode.
+
+     -> Same .class file can run on Windows, Linux, Mac, etc.
+
+     Simple & Easy to Learn
+
+     -> Syntax is close to C/C++, but removes complexities like pointers & operator overloading.
+
+     Secure
+
+     -> No explicit pointers (reduces memory corruption risk).
+
+     -> Bytecode verification + JVM sandboxing protect against malicious code.
+
+     Robust
+
+     -> Strong memory management.
+
+     -> Automatic Garbage Collection.
+
+     -> Exception handling built-in.
+
+     Multithreaded
+
+     -> Java has built-in support for multithreading.
+
+     -> Easy to write programs that can do multiple tasks concurrently.
+
+     High Performance (relative to interpreted languages)
+
+     -> Uses JIT (Just-In-Time) compiler to convert bytecode → native machine code at runtime.
+
+     -> Faster than purely interpreted languages.
+
+     Distributed
+
+     -> Supports networking & distributed computing via libraries (e.g., RMI, CORBA, Sockets).
+
+     Dynamic & Extensible
+
+     -> Classes can be loaded dynamically at runtime.
+
+     -> Supports reflection, dynamic class loading, and integration with other languages.
+
+Q4. Java String pool?
+Ans: Definition:
+
+     -> The String Pool (a.k.a. String Intern Pool) is a special memory region inside the heap (in PermGen/Metaspace depending on JVM version) where Java stores string literals.
+
+     -> It ensures that identical string literals are stored only once, to save memory.
+
+     How it works:
+
+     String s1 = "SunTec";
+     String s2 = "SunTec";
+
+
+     -> Both s1 and s2 point to the same object in the String Pool (not two separate objects).
+
+     String s3 = new String("SunTec");
+
+
+     -> This creates a new String object in the heap, not in the pool.
+
+     -> But "SunTec" literal still resides in the pool.
+
+     Key Points:
+
+     -> Immutability: Strings are immutable in Java → makes pooling safe.
+
+     -> String literals: Stored in the pool automatically.
+
+     -> intern() method: Forces a string object into the pool.
+
+     String s4 = new String("SunTec").intern();
+
+
+     → s4 will now point to the pooled "SunTec".
+
+     -> Memory efficiency: Pool avoids creating duplicate strings.
+
+     Why is this important?
+
+     -> Saves memory when you have lots of repeated strings (common in enterprise apps like billing systems, where customer IDs, transaction types, etc. repeat a lot).
+
+     -> Speeds up comparisons: == can work for literals in the pool since they reference the same object.
+
+Q5. Wrapper class?
+Ans: Definition:
+
+     -> A wrapper class is a class that wraps (converts) a primitive data type into an object.
+
+     -> Java provides one wrapper class for each primitive type.
+
+     Why do we need Wrapper Classes?
+
+     -> Collections Framework: Collections (like ArrayList, HashMap) only work with objects, not primitives. Wrappers allow primitives to be used.
+
+     List<Integer> list = new ArrayList<>();
+     list.add(10); // primitive int auto-boxed into Integer
+
+
+     -> Utility Methods: Wrapper classes provide methods like parsing, value conversions, etc.
+
+     int num = Integer.parseInt("123");
+
+
+     -> Autoboxing & Unboxing:
+
+        -> Autoboxing: automatic conversion from primitive → wrapper.
+
+        Integer x = 5; // int → Integer
+
+
+        -> Unboxing: automatic conversion from wrapper → primitive.
+
+        int y = x; // Integer → int
+
+
+     -> Null representation: Wrappers can be null (useful in DB results), whereas primitives cannot.
+
+Q6. Scenario based question on Collections in Java?
+
+Q7. Use of this and super keyword?
+Ans: 🚀 this Keyword in Java
+
+     Definition:
+     -> this is a reference variable in Java that refers to the current object of the class.
+
+     Uses:
+
+     -> Access instance variables when they are shadowed by local variables.
+
+     class Employee {
+         int salary;
+         Employee(int salary) {
+             this.salary = salary; // differentiates instance var from local var
+         }
+     }
+
+
+     -> Invoke current class methods (implicitly or explicitly).
+
+     -> Invoke current class constructor using this().
+
+     class A {
+         A() { this(10); }
+         A(int x) { System.out.println("Value: " + x); }
+     }
+
+
+     -> Pass current object as an argument to another method.
+
+     doSomething(this);
+
+     🚀 super Keyword in Java
+
+     Definition:
+     -> super is a reference variable in Java that refers to the immediate parent class object.
+
+     Uses:
+
+     -> Access parent class variables/methods (when overridden or hidden).
+
+     class Parent { int value = 10; }
+     class Child extends Parent {
+         int value = 20;
+         void print() {
+             System.out.println(super.value); // prints 10
+         }
+     }
+
+
+     -> Invoke parent class constructor using super().
+
+        Always the first statement in child constructor.
+
+     class Parent {
+         Parent() { System.out.println("Parent Constructor"); }
+     }
+     class Child extends Parent {
+         Child() { super(); System.out.println("Child Constructor"); }
+     }
+
+
+     -> Call parent class method if it’s overridden in child.
+
+     class Parent { void show() { System.out.println("Parent"); } }
+     class Child extends Parent {
+         void show() {
+             super.show(); // calls parent’s show()
+             System.out.println("Child");
+         }
+     }
+
+Q8. Difference between static and instance method?
+Ans: Static Method
+
+     -> Belongs to the class, not to any specific object.
+
+     -> Declared using the static keyword.
+
+     -> Can be called without creating an object of the class.
+
+     -> Can only access:
+
+        -> Other static methods
+
+        -> Static variables
+
+     -> Cannot access: instance variables or instance methods directly (needs an object).
+
+     -> Example:
+
+     class MathUtil {
+         static int square(int x) {
+             return x * x;
+         }
+     }
+
+     int result = MathUtil.square(5); // No object needed
+
+     Instance Method
+
+     -> Belongs to an object of the class.
+
+     -> Can only be called through an object (unless it’s in the same class).
+
+     -> Can access:
+
+        -> Both instance variables/methods
+
+        -> Static variables/methods
+
+     -> Example:
+
+     class Employee {
+         int salary = 5000;
+
+         void printSalary() {
+             System.out.println("Salary: " + salary);
+         }
+     }
+
+     Employee e = new Employee();
+     e.printSalary(); // Called on object
+
+Q9. Constructors and their types?
+Ans: 🚀 Constructors in Java
+
+     Definition:
+
+     A constructor is a special method in Java used to initialize objects.
+
+     It has the same name as the class, and no return type (not even void).
+
+     Gets called automatically when an object is created.
+
+     🔑 Types of Constructors in Java
+     1. Default Constructor
+
+     Provided by the compiler if no constructor is defined.
+
+     Initializes instance variables with default values (0, null, false).
+
+     Example:
+
+     class Student {
+         int id;
+         String name;
+     }
+
+     Student s = new Student(); // compiler provides default constructor
+
+     2. No-Argument Constructor
+
+     Explicitly defined constructor without parameters.
+
+     Useful when you want to set some default values.
+
+     Example:
+
+     class Student {
+         Student() {
+             System.out.println("No-arg constructor called");
+         }
+     }
+
+     3. Parameterized Constructor
+
+     Takes parameters to initialize object with custom values.
+
+     Example:
+
+     class Student {
+         int id; String name;
+         Student(int id, String name) {
+             this.id = id;
+             this.name = name;
+         }
+     }
+
+     Student s = new Student(1, "Raghav");
+
+     4. Copy Constructor (not built-in like C++)
+
+     A constructor that initializes an object using another object of the same class.
+
+     Must be written manually in Java.
+
+     Example:
+
+     class Student {
+         int id; String name;
+         Student(Student s) {
+             this.id = s.id;
+             this.name = s.name;
+         }
+     }
+
+     ⚡ Additional Points
+
+     Constructor Overloading: Having multiple constructors with different parameter lists.
+
+     Chaining: Use this() for current class constructors, super() for parent class constructors.
+
+     If you define any constructor, compiler won’t provide default one.
+
+Q10. String Buffer vs String Builder
+Ans: 🚀 StringBuffer vs StringBuilder
+     1. Mutability
+
+     Both are mutable classes, unlike String (which is immutable).
+
+     So they can change content without creating new objects.
+
+     2. Thread-Safety
+
+     StringBuffer → thread-safe (synchronized methods).
+
+     StringBuilder → not thread-safe (no synchronization).
+
+     3. Performance
+
+     StringBuffer → slower (because of synchronization overhead).
+
+     StringBuilder → faster (no synchronization).
+
+     4. When to Use
+
+     StringBuffer → Use when multiple threads are modifying the same string (multi-threaded environment).
+
+     StringBuilder → Use when working in a single-threaded environment for better performance.
+
+     ✅ Example
+     public class Demo {
+         public static void main(String[] args) {
+             StringBuffer sb1 = new StringBuffer("Hello");
+             sb1.append(" SunTec");
+             System.out.println(sb1); // Thread-safe, but slower
+
+             StringBuilder sb2 = new StringBuilder("Hello");
+             sb2.append(" Raghav");
+             System.out.println(sb2); // Faster, no synchronization
+         }
+     }
+
+Q11. Abstract classes vs Interfaces?
+Ans: Abstract Class:
+
+   ->  A class declared with abstract keyword that cannot be instantiated.
+
+   ->  Can have abstract methods (no body) and concrete methods (with body).
+
+   ->  Can define constructors, instance variables, and state.
+
+   ->  Subclasses use extends and must implement abstract methods unless they are abstract themselves.
+
+     Interface:
+
+   ->  A contract that specifies what a class should do, not how.
+
+   ->  By default, methods are public & abstract, and variables are public static final.
+
+   ->  Since Java 8, interfaces can have default methods and static methods; since Java 9, also private methods.
+
+   ->  Classes use implements to provide implementations.
+
+     When to use:
+
+   ->  Use an abstract class when you want to share common state or behavior across subclasses. Example: a BankAccount abstract class with fields like balance and methods like deposit() and withdraw().
+
+   ->  Use an interface when you want to define a common capability/contract across unrelated classes. Example: Comparable or Serializable.
+
+Q12. Method overloading and can we overload the main() method?
+Ans: 🚀 Method Overloading in Java
+
+     Definition:
+
+     Method Overloading = same method name but different parameter list (number, type, or order of parameters).
+
+     Happens at compile time → also called compile-time polymorphism.
+
+     Rules:
+
+     Same method name.
+
+     Different parameter list (arguments).
+
+     Return type alone cannot distinguish overloaded methods.
+
+     Can overload static, instance, and even main() methods.
+
+     ✅ Example
+     class Calculator {
+         int add(int a, int b) { return a + b; }
+         double add(double a, double b) { return a + b; }
+         int add(int a, int b, int c) { return a + b + c; }
+     }
+
+
+     Here, add() is overloaded with different parameters.
+
+     🚀 Can We Overload main() Method?
+
+     👉 Yes, we can overload the main() method like any other method.
+
+     But the JVM always looks for the specific signature:
+
+     public static void main(String[] args)
+
+
+     Other overloaded versions won’t be entry points, but can be called from inside main.
+
+     Example:
+
+     public class Test {
+         public static void main(String[] args) {
+             System.out.println("Main with String[]");
+             main(10);
+         }
+
+         public static void main(int x) {
+             System.out.println("Overloaded main: " + x);
+         }
+     }
+
+
+     Output:
+
+     Main with String[]
+     Overloaded main: 10
+
+     🗣️ Interview-Ready Summary
+
+     👉 “Method overloading in Java is when multiple methods have the same name but different parameter lists, and it is resolved at compile time. Yes, we can overload the main() method like any other method, but only public static void main(String[] args) is recognized as the program’s entry point. Other overloaded main() methods can only be invoked from within that main method.”
+
+Q13. Method overriding?
+Ans: 🚀 Method Overriding in Java
+
+     Definition:
+
+     Method overriding happens when a subclass provides its own implementation of a method that is already defined in its parent class.
+
+     It is an example of runtime polymorphism (or dynamic method dispatch).
+
+     ✅ Rules of Method Overriding
+
+     Same method signature (same name, parameters, return type).
+
+     Inheritance required (must be between parent & child classes).
+
+     Access modifier:
+
+     Cannot be more restrictive than parent.
+
+     Can be the same or more accessible.
+
+     Example: If parent method is protected, child can’t make it private.
+
+     Return type: Must be the same or a covariant type (subclass of return type).
+
+     Final methods: Cannot be overridden.
+
+     Static methods: Cannot be overridden (they are hidden).
+
+     Constructors: Cannot be overridden.
+
+     Exceptions: If parent method throws a checked exception, the child method can throw the same or narrower checked exception.
+
+     ✅ Example: Method Overriding
+     class Parent {
+         void show() {
+             System.out.println("Parent’s show method");
+         }
+     }
+
+     class Child extends Parent {
+         @Override
+         void show() {
+             System.out.println("Child’s show method");
+         }
+     }
+
+     public class Test {
+         public static void main(String[] args) {
+             Parent obj = new Child();
+             obj.show();  // Output: Child’s show method
+         }
+     }
+
+
+     Explanation:
+
+     The reference is of type Parent, but the object is of type Child.
+
+     At runtime, the JVM decides which version of show() to execute → Child’s method.
+
+     This is runtime polymorphism.
+
+     🗣️ Interview-Ready Summary
+
+     👉 “Method overriding in Java occurs when a subclass provides its own implementation of a method already defined in the parent class. It requires inheritance, the same method signature, and follows rules like access modifiers cannot be more restrictive and static/final methods can’t be overridden. Overriding enables runtime polymorphism, where the method that gets executed is determined at runtime based on the actual object, not the reference type.”
+
+Q14. Exception handling in java?
+Ans: 🚀 Exception Handling in Java
+
+     Definition:
+
+     Exception Handling in Java is a mechanism to handle runtime errors so the normal flow of the program is not disrupted.
+
+     It uses try-catch-finally-throw-throws keywords.
+
+     ✅ Exception Hierarchy
+
+     Throwable (superclass)
+
+     Exception (recoverable errors → user/program errors)
+
+     Checked Exceptions (must be handled/declared → e.g., IOException, SQLException)
+
+     Unchecked Exceptions (RuntimeException and subclasses → e.g., NullPointerException, ArrayIndexOutOfBounds)
+
+     Error (serious issues → not usually handled → e.g., OutOfMemoryError, StackOverflowError)
+
+     ✅ Keywords in Exception Handling
+
+     try → Block of code where exception might occur.
+
+     catch → Block to handle the exception.
+
+     finally → Always executes (cleanup, closing resources).
+
+     throw → Used to explicitly throw an exception.
+
+     throws → Declares the exceptions a method might throw.
+
+     ✅ Example
+     class Example {
+         public static void main(String[] args) {
+             try {
+                 int a = 10 / 0; // ArithmeticException
+             } catch (ArithmeticException e) {
+                 System.out.println("Error: " + e.getMessage());
+             } finally {
+                 System.out.println("Finally block always executes");
+             }
+         }
+     }
+
+
+     Output:
+
+     Error: / by zero
+     Finally block always executes
+
+     ✅ Checked vs Unchecked Exceptions
+
+     Checked: Checked at compile-time → must handle. (IOException, SQLException)
+
+     Unchecked: Checked at runtime only. (NullPointerException, ArithmeticException)
+
+     🗣️ Interview-Ready Summary
+
+     👉 “Exception Handling in Java is a mechanism to deal with runtime errors using try, catch, finally, throw, and throws. Exceptions are objects of type Throwable. Checked exceptions must be handled or declared, while unchecked exceptions are runtime errors. Errors like OutOfMemoryError are not recoverable. Exception handling helps maintain application stability, which is especially critical in financial systems where data integrity is essential.”
+
+Q15. Lifecycle of a thread?
+Ans: 🚀 Lifecycle of a Thread in Java
+
+     A thread in Java goes through five main states as defined in the Thread class (though JVM may have internal variations).
+
+     1. New (Created)
+
+     When a thread object is created using new Thread(), but start() has not been called yet.
+
+     Example:
+
+     Thread t = new Thread();
+
+
+     State: NEW
+
+     2. Runnable
+
+     After calling start(), the thread is ready to run but waiting for CPU scheduling.
+
+     It’s in the thread pool, eligible to run.
+
+     Example:
+
+     t.start();
+
+
+     State: RUNNABLE
+
+     3. Running
+
+     When the CPU scheduler picks the thread from runnable state, it enters running state and executes its run() method.
+
+     Only one thread per CPU core can be in Running state at a time.
+
+     State: RUNNING
+
+     4. Blocked / Waiting / Timed Waiting
+
+     A thread may pause execution for various reasons:
+
+     Blocked: Waiting for a resource/lock.
+
+     Waiting: Waiting indefinitely for another thread’s signal.
+
+     Timed Waiting: Waiting for a specific period (e.g., sleep(1000) or join(1000)).
+
+     State: WAITING / TIMED_WAITING / BLOCKED
+
+     5. Terminated (Dead)
+
+     After the thread finishes executing run(), it enters the terminated state.
+
+     Once terminated, a thread cannot be restarted.
+
+     State: TERMINATED
+
+     ✅ Diagram (Interview-Style Mental Picture)
+     NEW → start() → RUNNABLE → Running → (Waiting/Blocked/Timed Waiting) → RUNNABLE → TERMINATED
+
+     ✅ Example Code
+     class MyThread extends Thread {
+         public void run() {
+             System.out.println("Thread is running...");
+         }
+     }
+
+     public class ThreadLifeCycleDemo {
+         public static void main(String[] args) {
+             MyThread t1 = new MyThread();   // NEW
+             t1.start();                     // RUNNABLE → RUNNING
+             try {
+                 t1.join();                  // WAITING until t1 finishes
+             } catch (InterruptedException e) {
+                 e.printStackTrace();
+             }
+             System.out.println("Thread ended"); // TERMINATED
+         }
+     }
+
+     🗣️ Interview-Ready Summary
+
+     👉 “A thread in Java goes through five main states: NEW (created but not started), RUNNABLE (ready to run), RUNNING (executing), WAITING/BLOCKED/TIMED_WAITING (paused for resources, signals, or time), and TERMINATED (finished execution). The lifecycle is managed by the JVM and CPU scheduler. Once terminated, a thread cannot be restarted.”
+
+Q16. Singleton class?
+
+Q17. Aggregation vs Composition in java?
+
+Q18. Anonymous Inner class?
+
+Q19. Difference between Implicit and explicit type conversion?
+
+Q20. Purpose of volatile keyword?
+
+Q21. System.out, System.err and System.in?
+
+Q22. Access specifiers in java and their purpose?
+
+Q23. Final, Finally and Finalize keyword?
+
+Q24. WAP to toggle characters of a given string?
+
+Q25. WAP to count the occurrence of digits in a number?
+
+Q26. WAP to print reverse array?
+
+Q27. Anagram Strings?
+Ans: Definition:
+     Two strings are anagrams if they contain the same characters with the same frequency, just in a different order.
+
+     Approach 1 (Array – Best for lowercase English letters):
+
+     -> Create an integer array of size 26.
+
+     -> Iterate through string s and increment the count for each character.
+
+     -> Iterate through string t and decrement the count.
+
+     -> If any count goes negative → not an anagram.
+
+     -> Finally, if all counts are zero → strings are anagrams.
+
+     Approach 2 (HashMap – Generalized):
+
+     -> Use a HashMap<Character, Integer> to store frequency of characters in s.
+
+      ->Decrement frequencies using characters from t.
+
+     -> Check if all counts return to zero.
+
+     -> Works for Unicode characters as well (beyond English alphabets).
+
+     Complexity:
+
+     -> Time: O(n), since each character is processed once.
+
+     Space:
+
+     -> O(1) for array approach (fixed 26 size).
+
+     -> O(k) for HashMap, where k = number of unique characters.
+
+     Example:
+     -> s = "listen", t = "silent" → both map/array counts match → anagrams.
+
+Q28. WAP to find first & last occurrence of an element in an array?
+
+Q29. Reasons behind making Strings immutable in java?
+
+Q30. Difference between deep and shallow copy
