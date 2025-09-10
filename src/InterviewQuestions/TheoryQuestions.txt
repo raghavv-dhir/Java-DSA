@@ -763,8 +763,96 @@ Ans: 🚀 Lifecycle of a Thread in Java
      👉 “A thread in Java goes through five main states: NEW (created but not started), RUNNABLE (ready to run), RUNNING (executing), WAITING/BLOCKED/TIMED_WAITING (paused for resources, signals, or time), and TERMINATED (finished execution). The lifecycle is managed by the JVM and CPU scheduler. Once terminated, a thread cannot be restarted.”
 
 Q16. Singleton class?
+Ans: Definition:
+
+     A Singleton class is a class that allows only one instance to be created throughout the application.
+
+     Ensures controlled access to that single instance.
+
+     Commonly used for logging, caching, DB connections, configuration, thread pools.
+
+     ✅ How to Implement a Singleton
+     1. Eager Initialization
+     class Singleton {
+         private static final Singleton instance = new Singleton();
+         private Singleton() {}   // private constructor
+         public static Singleton getInstance() {
+             return instance;
+         }
+     }
+
+
+     Instance created at class loading.
+
+     Simple, but memory may be wasted if instance is never used.
+
+     🗣️ Interview-Ready Summary
+
+     👉 “A Singleton class ensures only one instance is created in the application. It is useful for shared resources like configuration, caching, or database connections. In Java, we make the constructor private and expose a static method that returns the single instance. There are multiple ways to implement it — eager, lazy, thread-safe with double-checked locking, and the Bill Pugh inner static helper approach, which is often considered the best practice.”
 
 Q17. Aggregation vs Composition in java?
+Ans: 1. Aggregation (Has-A relationship, weaker association)
+
+     A special form of association (HAS-A relationship).
+
+     Represents a relationship where one class contains a reference to another class, but both can exist independently.
+
+     Weak relationship (a “whole–part” but not dependent).
+
+     👉 Example:
+
+     class Address {
+         String city, state;
+         Address(String city, String state) {
+             this.city = city;
+             this.state = state;
+         }
+     }
+
+     class Employee {
+         String name;
+         Address address;   // Aggregation (Employee has an Address)
+         Employee(String name, Address address) {
+             this.name = name;
+             this.address = address;
+         }
+     }
+
+
+     If Employee is deleted, the Address object can still exist.
+
+     2. Composition (Strong ownership)
+
+     A restricted form of Aggregation.
+
+     Represents a relationship where one class cannot exist without the other.
+
+     Strong relationship (a “whole–part” dependency).
+
+     If the container is destroyed, the contained object is also destroyed.
+
+     👉 Example:
+
+     class Engine {
+         void start() { System.out.println("Engine starting..."); }
+     }
+
+     class Car {
+         private final Engine engine;   // Composition
+         Car() {
+             engine = new Engine();
+         }
+         void startCar() {
+             engine.start();
+         }
+     }
+
+
+     If Car is destroyed, its Engine object will also be destroyed.
+
+     🗣️ Interview-Ready Summary
+
+     👉 “Aggregation and Composition are both HAS-A relationships in OOP. Aggregation is a weak association where the contained object can exist independently, like an Employee having an Address. Composition is a strong association where the contained object cannot exist without the container, like a Car having an Engine. The main difference is lifecycle dependency — in aggregation, objects are independent, while in composition, the child object’s lifecycle depends on the parent.”`
 
 Q18. Anonymous Inner class?
 
