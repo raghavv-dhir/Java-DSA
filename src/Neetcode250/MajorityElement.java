@@ -6,6 +6,6 @@ public class MajorityElement {
         System.out.println(sol(nums));
     }
     static int sol(int[] nums){
-
+        return -1;
     }
 }
