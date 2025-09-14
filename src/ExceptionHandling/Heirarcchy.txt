@@ -1,0 +1,23 @@
+Hierarchy:
+
+Throwable
+ ├── Error (JVM issues → don’t handle)
+ └── Exception
+      ├── Checked (compile-time checked)
+      └── Unchecked (RuntimeException → programmer errors)
+
+
+Keywords in Exception Handling:
+------------------------------------------------------------------
+Keyword	 |   Use                                                 |
+------------------------------------------------------------------
+try	     |   Defines block of code to monitor for exceptions.    |
+------------------------------------------------------------------
+catch	 |   Handles the exception.                              |
+------------------------------------------------------------------
+finally  |   Always executes (cleanup).                          |
+------------------------------------------------------------------
+throw	 |   Used to explicitly throw an exception.              |
+------------------------------------------------------------------
+throws	 |   Declares exceptions a method can throw.             |
+------------------------------------------------------------------

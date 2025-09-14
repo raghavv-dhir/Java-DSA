@@ -117,7 +117,7 @@ Takes a Predicate<T> (a function returning true/false).
 
 Keeps only those elements where the condition is true.
 
-✅ Example: get only even numbers
+✅ BasicExample: get only even numbers
 
 List<Integer> numbers = Arrays.asList(1,2,3,4,5,6);
 
@@ -135,7 +135,7 @@ Takes a Function<T,R> (a function mapping one type to another).
 
 Returns a new stream of transformed elements.
 
-✅ Example: square all numbers
+✅ BasicExample: square all numbers
 
 List<Integer> numbers = Arrays.asList(1,2,3,4,5);
 

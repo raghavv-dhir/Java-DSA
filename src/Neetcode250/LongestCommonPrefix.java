@@ -26,7 +26,7 @@ public class LongestCommonPrefix {
 
 /*
 DRY RUN:
-Dry Run with Example
+Dry Run with BasicExample
 
 Input:
 
