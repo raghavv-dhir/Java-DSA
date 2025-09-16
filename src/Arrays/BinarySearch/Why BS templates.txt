@@ -1,0 +1,14 @@
+Binary search:
+- An algorithm that systematically divides the search space in half after every comparison.
+- Particularly useful for finding an index or element in a sorted collection.
+
+Why should be use Binary Search?
+- Data structure is an ordered collection (sorted array)
+- You need to find the element quickly (T: O(log n))
+- If the collection is unordered, it can be sorted before applying BS.
+
+
+Three parts of BS:
+1. Pre-processing: Sort if not already sorted
+2. Execution: Use loop to divide search space in half, compare the middle element with target and adjust left & right boundaries.
+3. Post-processing: If the exact target isn't found, determine viable candidates based on problem's statement, useful for problems like first occurrence, last occurrence etc.
