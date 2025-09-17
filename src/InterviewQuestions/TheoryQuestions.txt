@@ -739,7 +739,7 @@ Ans: 🚀 Lifecycle of a Thread in Java
      NEW → start() → RUNNABLE → Running → (Waiting/Blocked/Timed Waiting) → RUNNABLE → TERMINATED
 
      ✅ Example Code
-     class MyThread extends Thread {
+     class multithreading.MyThread extends Thread {
          public void run() {
              System.out.println("Thread is running...");
          }
@@ -747,7 +747,7 @@ Ans: 🚀 Lifecycle of a Thread in Java
 
      public class ThreadLifeCycleDemo {
          public static void main(String[] args) {
-             MyThread t1 = new MyThread();   // NEW
+             multithreading.MyThread t1 = new multithreading.MyThread();   // NEW
              t1.start();                     // RUNNABLE → RUNNING
              try {
                  t1.join();                  // WAITING until t1 finishes
