@@ -19,6 +19,6 @@ public class compareStrings {
             s2.add(s); // {apple,banana}
         }
         s1.retainAll(s2);  //{apple,banana}
-        return s1;
+        return s1; //return any set
     }
 }
